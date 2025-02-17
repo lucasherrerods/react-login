@@ -1,9 +1,14 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router'
+import Register from './pages/Register'
+
 function App() {
 
   return (
-    <div>
-      Ola Mundo
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Register />}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
