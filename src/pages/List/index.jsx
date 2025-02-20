@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import api from '../../services/api.js'
 
 function List() {
+  const [allUsers, setAllUsers] = useState()
 
   //colocando a função dentro do useEffect para ser chamada quando a página for carregada
   useEffect(() => {
@@ -14,7 +15,7 @@ function List() {
         headers: { Authorization: `Bearer ${token}` }
       })
 
-      console.log(users)
+      setAllUsers(users)
     }
 
     loadUsers()
