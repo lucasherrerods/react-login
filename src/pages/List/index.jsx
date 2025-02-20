@@ -10,11 +10,11 @@ function List() {
       const token = localStorage.getItem('token')
 
       //realizando a request e enviando o token para autenticação
-      const response = await api.get('/list', {
+      const { data: { users } } = await api.get('/list', {
         headers: { Authorization: `Bearer ${token}` }
       })
 
-      console.log(response)
+      console.log(users)
     }
 
     loadUsers()
